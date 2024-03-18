@@ -1,0 +1,63 @@
+/*
+Create interface area. Create Three Classes called rectangle, triangle and Square calculate areas respectively..
+*/
+
+// Interface for Area
+interface Area {
+    double calculateArea();
+}
+
+// Rectangle Class
+class Rectangle implements Area {
+    double length;
+    double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+// Triangle Class
+class Triangle implements Area {
+    double base;
+    double height;
+
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    public double calculateArea() {
+        return 0.5 * base * height;
+    }
+}
+
+// Square Class
+class Square implements Area {
+    double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    @Override
+    public double calculateArea() {
+        return side * side;
+    }
+}
+
+// Calculate Areas
+Rectangle rectangle = new Rectangle(5, 10);
+Triangle triangle = new Triangle(4, 6);
+Square square = new Square(7);
+
+System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+System.out.println("Area of Triangle: " + triangle.calculateArea());
+System.out.println("Area of Square: " + square.calculateArea());
